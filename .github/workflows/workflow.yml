@@ -25,11 +25,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-alexhyett-site-build-
       - name: Install dependencies
-        run: yarn install
-      - name: Run Lint
-        run: yarn run lint
-      - name: Build
-        run: yarn run build
+      run: npm install
+      - name: build website
+        run: npm run build
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
